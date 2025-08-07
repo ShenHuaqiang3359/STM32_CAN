@@ -1,0 +1,103 @@
+﻿// GEN BLOCK BEGIN Include
+#define TSMP_IMPL
+#include "TSMaster.h"
+#include "MPLibrary.h"
+#include "Database.h"
+#include "TSMasterBaseInclude.h"
+#include "Configuration.h"
+// GEN BLOCK END Include
+
+// CODE BLOCK BEGIN Variable TxMsg MyxlekFzTUhneExEZ3NNQ3d3ZURBc01DeDdNSGd3TENBd2VEQXNJREI0TUN3Z01IZ3dMQ0F3ZURBc0lEQjRNQ3dnTUhnd0xDQXdlREI5ZlFfXyws
+// 变量文档 "TxMsg"
+TMPVarCAN TxMsg;
+// CODE BLOCK END Variable TxMsg
+
+// CODE BLOCK BEGIN Timer SendTimer1 MTAwMA__
+// 定时器文档 "SendTimer1"
+TMPTimerMS SendTimer1;
+// CODE BLOCK END Timer SendTimer1
+
+// CODE BLOCK BEGIN Documentation  TWFHaVUyVnVaRlJwYldWeU1iYW95ckhHOTdhb3h0cTNvc3ZOc2FqT3hLTzZEUW9nSUNCSlJDQXdlREZCUVEwS0lDQWdaR0YwWVNBd2VEQTRMREI0TURjc01IZ3dOaXd3ZURBMUxEQjRNRFFzTUhnd015d3dlREF5TERCNE1ERU5DZzBLTXFHaVEwRk9YMUo0TWIzVHl0eERRVTZ4cU03RXlzSzgvcU82RFFvZ0lDQ3g1TUcvVkhoTmMyZTkwOHJWc2FqT3hBMEtJQ0FnVkhoTmMyZGZaR0YwWVZzNFhTQzA1cmZGc2FqT3hNcjl2dDIxeE1yOTEra05DaUFnSUZSNFRYTm5YMGxFSUxUbXQ4V3hxTTdFU1VRTkNpQWdJTlRhejdYTnM4Lzd6NkxXMExUeTA2RzkwOHJWdGNTeHFNN0VJRWxFSUxyTklHUmhkR0VOQ2lBZ0lBMEs_
+// CODE BLOCK END Documentation 
+
+// CODE BLOCK BEGIN On_Timer Send_Timer1 U2VuZFRpbWVyMQ__
+// 定时器触发事件 "Send_Timer1" for Timer SendTimer1
+void on_timer_Send_Timer1(void) { try { // 定时器 = SendTimer1
+
+/*定义报文数据结构体*/
+TCAN f1={CH1,0x01,8,0,0x1AA,0,{0x08,0x07,0x06,0x05,0x04,0x03,0x02,0x01}}; 
+      /* 
+    u8 FIdxChn  通道选择
+    u8 FProperties  帧类型 
+    u8 FDLC       数据长度
+    u8 FReserved   保留
+    s32 FIdentifier  ID
+    s64 FTimeUs    时间戳
+    u8  FData[8]    报文数据 
+    */
+/*发送报文*/
+com.transmit_can_async(&f1);
+
+
+} catch (...) { log_nok("CRASH detected"); app.terminate_application(); }}
+// CODE BLOCK END On_Timer Send_Timer1
+
+// CODE BLOCK BEGIN On_Start Send_Init
+// 启动事件 "Send_Init"
+void on_start_Send_Init(void) { try { // 程序启动事件
+ 
+ /*打开定时器 SendTimer1 */
+ SendTimer1.start();
+ 
+ /*运行窗口 "CAN /CAN FD Transmit" */
+ app.run_form("TfrmCANFDTrace");
+
+} catch (...) { log_nok("CRASH detected"); app.terminate_application(); }}
+// CODE BLOCK END On_Start Send_Init
+
+// CODE BLOCK BEGIN On_Stop Send_Stop1
+// 停止事件 "Send_Stop1"
+void on_stop_Send_Stop1(void) { try { // 程序停止事件
+
+/*关闭定时器 SendTimer1 */
+SendTimer1.stop();
+
+ /*运行窗口 "CAN /CAN FD Transmit" */
+app.stop_form("CAN / CAN FD 报文信息");       
+
+} catch (...) { log_nok("CRASH detected"); app.terminate_application(); }}
+// CODE BLOCK END On_Stop Send_Stop1
+
+// CODE BLOCK BEGIN On_CAN_Rx CAN_Rx1 MCwtMSwyOTE_
+// CAN报文接收事件 "CAN_Rx1" 针对标识符 = 0x123
+void on_can_rx_CAN_Rx1(const TCAN* ACAN) { try {  // 针对标识符 = 0x123
+// if (ACAN->FIdxChn != CH1) return; // if you want to filter channel
+         int  i;                 //循环变量
+         u8   TxMsg_data[8];     //存放报文数据的数组
+         s32  TxMsg_ID;          //存放报文ID
+
+        TxMsg.set(*ACAN);           //接收的报文给变量TxMsg
+        TxMsg_ID=ACAN->FIdentifier;  //接收的报文ID给变量TxMsg_ID
+
+        for(i=0;i<8;i++)
+        {
+           TxMsg_data[i]=ACAN->FData[i];  //循环赋值
+        } 
+        
+        /*在系统消息中打印接收到的报文ID*/
+        log("接收的CAN ID：0x%03X",TxMsg_ID );
+        
+        /*在系统消息中打印接收到的报文数据*/
+       log("接收的CAN报文: 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X 0x%02X", 
+       TxMsg_data[0], TxMsg_data[1], TxMsg_data[2], TxMsg_data[3], TxMsg_data[4], TxMsg_data[5], TxMsg_data[6], TxMsg_data[7]);
+
+} catch (...) { log_nok("CRASH detected"); app.terminate_application(); }}
+// CODE BLOCK END On_CAN_Rx CAN_Rx1
+
+// CODE BLOCK BEGIN Step_Function  MTA_
+// 主step函数，执行周期 10 ms
+void step(void) { try { // 周期 = 10 ms
+
+} catch (...) { log_nok("CRASH detected"); app.terminate_application(); }}
+// CODE BLOCK END Step_Function 
+

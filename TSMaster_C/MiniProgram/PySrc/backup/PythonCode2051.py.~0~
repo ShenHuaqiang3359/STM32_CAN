@@ -1,0 +1,13 @@
+﻿# CODE BLOCK BEGIN Global_Definitions 
+from TSMaster import *
+
+
+# CODE BLOCK END Global_Definitions 
+# CODE BLOCK BEGIN Instance 
+Instance = MpInstance('PythonCode2051')
+# CODE BLOCK END Instance 
+# CODE BLOCK BEGIN Step_Function  NQ__
+def step() -> None:
+    pass
+
+# CODE BLOCK END Step_Function 

@@ -1,0 +1,26 @@
+ninja_required_version = 1.5
+GCC = "C:\Program Files (x86)\TOSUN\TSMaster\Data\compilers\llvm_mingw_x64\bin\clang++.exe"
+lflags = -shared -L "C:\Program Files (x86)\TOSUN\TSMaster\Data\compilers\llvm_mingw_x64\bin/../x86_64-w64-mingw32/lib" -Wl,"C:\Users\65737\Desktop\TSMaster_Preojct\MiniProgram\Build\PythonCode2051\mp.def"
+cflags = -target x86_64-pc-windows-gnu -stdlib=libc++ -fdeclspec -Werror=return-type -Werror=format -O0 -isystem "C:\Program Files (x86)\TOSUN\TSMaster\Data\compilers\llvm_mingw_x64\bin/../include/c++/v1"  -I"C:\Users\65737\Desktop\TSMaster_Preojct\MiniProgram\Build\PythonCode2051" -I"C:\Users\65737\Desktop\TSMaster_Preojct\libs\PythonCode2051" -I"C:\Users\65737\Desktop\TSMaster_Preojct\libs\common" -I"C:\Users\65737\Desktop\TSMaster_Preojct\TestSystem\libs\common" 
+ADDCommd = -Werror=format
+builddir = C:\Users\65737\Desktop\TSMaster_Preojct\MiniProgram\Build\PythonCode2051
+MPdir = C:\Users\65737\Desktop\TSMaster_Preojct\bin
+rule compile_jfz
+    command = $GCC -c $cflags -MD -MF $out.d $in -o $out
+    description =  
+    depfile = $out.d
+    deps = gcc
+cppstrdir0 = C:\Users\65737\Desktop\TSMaster_Preojct\MiniProgram\Build\PythonCode2051
+build $cppstrdir0\\Database.o : compile_jfz $cppstrdir0\\Database.cpp
+build $cppstrdir0\\PythonCode2051.o : compile_jfz $cppstrdir0\\PythonCode2051.cpp
+build $cppstrdir0\\PythonCode2051Extern.o : compile_jfz $cppstrdir0\\PythonCode2051Extern.cpp
+build $cppstrdir0\\TSMasterBaseSource.o : compile_jfz $cppstrdir0\\TSMasterBaseSource.cpp
+build $cppstrdir0\\TSMasterCustomAPIDoc.o : compile_jfz $cppstrdir0\\TSMasterCustomAPIDoc.cpp
+rule link_jfz
+  command = $GCC $cflags $lflags $ADDCommd $in -o $out
+build $MPdir\PythonCode2051.mp64 : link_jfz $cppstrdir0\\Database.o $cppstrdir0\\PythonCode2051.o $cppstrdir0\\PythonCode2051Extern.o $cppstrdir0\\TSMasterBaseSource.o $cppstrdir0\\TSMasterCustomAPIDoc.o 
+build all: phony $MPdir\PythonCode2051.mp64
+default all
+rule clean
+  command = cmd /c del /f /q $cppstrdir0\\Database.o $cppstrdir0\\PythonCode2051.o $cppstrdir0\\PythonCode2051Extern.o $cppstrdir0\\TSMasterBaseSource.o $cppstrdir0\\TSMasterCustomAPIDoc.o  $MPdir\PythonCode2051.mp64
+build clean: clean

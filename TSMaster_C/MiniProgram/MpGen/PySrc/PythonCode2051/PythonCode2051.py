@@ -1,0 +1,38 @@
+﻿# CODE BLOCK BEGIN Global_Definitions 
+from TSMaster import *
+
+
+# CODE BLOCK END Global_Definitions 
+# CODE BLOCK BEGIN Instance 
+Instance = MpInstance('PythonCode2051')
+# CODE BLOCK END Instance 
+# CODE BLOCK BEGIN Timer SendTimer MQ__
+SendTimer = MpTimer("PythonCode2051", "SendTimer", 1) # Auto generated code, for modification please goto python code editor
+# CODE BLOCK END Timer SendTimer
+# CODE BLOCK BEGIN On_Timer Send U2VuZFRpbWVy
+def on_timer_Send() -> None:
+    pass
+TCAN f0={0x00,0x01,8,0x01,0x1AA,0,{0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08}};
+
+
+com.transmit_canfd_async(&f0);
+//com.transmit_can_async(&f1);
+
+# CODE BLOCK END On_Timer Send
+# CODE BLOCK BEGIN On_Start Init
+def on_start_Init() -> None:
+    pass
+    SendTimer.start();
+
+# CODE BLOCK END On_Start Init
+# CODE BLOCK BEGIN On_Stop Stop
+def on_stop_Stop() -> None:
+    pass
+    //SendTimer.stop();
+
+# CODE BLOCK END On_Stop Stop
+# CODE BLOCK BEGIN Step_Function  NQ__
+def step() -> None:
+    pass
+
+# CODE BLOCK END Step_Function 

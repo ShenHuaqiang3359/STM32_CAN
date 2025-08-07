@@ -1,0 +1,369 @@
+﻿[TSMaster]
+DebugMode=0
+LogVerbose=6
+Bounds=0,0,1938,1038
+Maximized=1
+AutoGenConstDef=0
+AutoGenDBConstDef=0
+DisableCrashDialog=0
+UseOutputDbg=1
+SelTxSgn=1
+DisplayHex=1
+DisplaySym=1
+Skin=
+SkinPalette=
+ColorfulMDI=0
+DelConfOnFormDel=1
+AutoSaveBeforeRun=1
+AutoCopyDBToLocal=0
+CustomFont=
+TraceFont=
+AutoHandleCANUB=1
+AutoHandleFlexRayUB=1
+AutoSavePrj=0
+DelHistoryConfOnSave=1
+DisableToast=0
+DisplayFormByPage=1
+ShowTabGroups=1
+Magnetic=1
+AppName=TSMaster
+DisableResize=0
+
+[app_conn_callback_before_connect]
+CoSimController=100
+Ethernet RBS=100
+Channel Selection=200
+CAN RBS=100
+Measurement Controller=500
+MDI Manager=600
+Signal Server=300
+J1939 TP=400
+FlexRay RBS=100
+TSMaster Main Application=100
+FlexRay RBS Controller=100
+CAN / CAN FD 报文信息 1=100
+CAN / CAN FD 报文信息 2=100
+Graphics=100
+
+[app_conn_callback_after_connect]
+LIN RBS=350
+MDI Manager=500
+J1939 TP=100
+MP Library Manager=400
+Ethernet RBS=100
+Ribbon Manager=700
+CAN RBS=300
+FlexRay RBS=100
+Measurement Comment Manager=200
+TSMaster Main Application=100
+Graphics=100
+Measurement Setup=100
+
+[app_conn_callback_before_disconnect]
+Signal Server=400
+LIN RBS=100
+J1939 TP=300
+MDI Manager=500
+
+[app_conn_callback_after_disconnect]
+Ethernet RBS=100
+Measurement Controller=800
+CAN RBS=300
+FlexRay RBS=100
+Ribbon Manager=600
+CoSimController=100
+Bus Log Engine=400
+MDI Manager=200
+MP Library Manager=700
+TSMaster Main Application=100
+CAN / CAN FD 报文信息 1=100
+CAN Transmit=100
+CAN / CAN FD 报文信息 2=100
+Graphics=100
+Measurement Setup=100
+
+[OnlineReplay]
+CANCount=0
+
+[TsRPC]
+Actv=1
+SizeBytes=1048576
+
+[TsRPCIP]
+Enabled=0
+Port=2809
+Proto=0
+FileCnt=0
+
+[TTsSimManager]
+FullSim=0
+Speed=1
+Step=0.1
+
+[ChannelMappings]
+CANChnCount=2
+CAN0=0,0,3,0,0,13,0,1000,1000,TSMaster,TC1013
+CAN1=1,0,1,0,1,-1,0,500,2000,TSMaster,default
+LINChnCount=0
+FlexRayChnCount=0
+EthernetChnCount=0
+AIChnCount=0
+AOChnCount=0
+DIChnCount=0
+DOChnCount=0
+GPSChnCount=0
+
+[UserVariables]
+Count=0
+
+[PluginManager]
+ExternalCount=0
+
+[BusStatistics]
+Enabled=1
+
+[app_hw_selector_conf]
+FEnableTSync=0
+FActiveWirelessOBD=
+FEnableTSWirelessOBD=0
+DeviceCount=0
+FEnableEthernetInterfaceDevice=0
+FNetIfNum=0
+
+[HWModeConfig]
+FHWRealVehicleMeasurementMode=0
+
+[MeasurementController]
+MCount=10
+M0=0,1,165,-1,0,TfrmCCodeEditor,C 代码编辑器 [CCode5148]
+M1=0,1,62,-1,1,TfrmCANDatabase,CAN 数据库
+M2=0,1,209,-1,2,TfrmCANFDTrace,
+M3=0,1,177,-1,3,TfrmGraphics,图形
+M4=0,1,571,-1,4,TfrmDataRepository,数据仓库 [DataRepo]
+M5=0,1,459,-1,5,TfrmSignalTester,信号测试管理器
+M6=0,1,213,-1,6,TfrmLogging,总线记录
+M7=0,1,245,-1,7,TfrmMeasurementSetup,测量设置
+M8=0,1,217,-1,8,TfrmSystemMsgs,系统消息
+M9=0,1,356,-1,9,TfrmNumeric,数值显示
+M10=0,1,356,-1,10,TfrmNumeric,数值显示
+M11=0,1,245,-1,11,TfrmMeasurementSetup,测量设置
+M12=0,1,217,-1,12,TfrmSystemMsgs,系统消息
+
+[CAN_Databases]
+UICommon=0,-1,0,0,Q0FOIMr9vt2/4g__,100,759,4475170865715567116,0
+UIFilter=
+PropertyHeight=372
+PropertyVisible=1
+HWChnCount=2
+
+[MBD Manager]
+LibCount=0
+ModelCount=0
+ModelPathsCount=0
+
+[CANRBS]
+UICommon=0,-1,0,0,Q0FOyqPT4Nfcz9+3wtXm,100,275,8564720880711109249,0
+UIFilter=
+ShowTopology=1
+TopoWidth=312
+IgnoreDisabled=1
+DisplayRxSignals=1
+GridWidth=312
+
+[hw_app_chn_0]
+TSVirtual_CAN_FilterEn=0
+TSVirtual_CAN_FilterStr=XXXXXXXXXXX
+CANFD_2_TS_FD_ControllerType=1
+CANFD_2_TS_FD_ControllerMode=0
+CANFD_2_TS_FD_BaudArb=1000
+CANFD_2_TS_FD_BTR0Arb=31
+CANFD_2_TS_FD_BTR1Arb=8
+CANFD_2_TS_FD_SJWArb=8
+CANFD_2_TS_FD_PrescalerArb=1
+CANFD_2_TS_FD_BaudData=1000
+CANFD_2_TS_FD_BTR0Data=29
+CANFD_2_TS_FD_BTR1Data=10
+CANFD_2_TS_FD_SJWData=3
+CANFD_2_TS_FD_PrescalerData=1
+CANFD_2_TS_FD_FilterIdx=0
+CANFD_2_TS_FD_FilterStr=XXXXXXXXXXX
+CANFD_2_TS_FD_Term120=1
+CANFD_2_TS_FD_FAutoRecoverFromBusOff=1
+
+[TfrmSignalTester]
+UICommon=0,-1,0,0,0MW6xbLiytS53MDtxvc_,100,268,3453135123091348669,0
+UIFilter=
+
+[CANLogger0]
+UICommon=0,-1,0,0,19zP37zHwrw_,100,477,3081025317601791605,0
+UIFilter=
+LogName=TSMaster_C2025_08_07_09_08_51.blf
+AddTime=1
+FollowConf=1
+DefaultDir=0
+PromptRename=0
+FileSizeChoice=1
+FrameCount=5000000
+FLoggingFileSizeMBytes=512
+ConvertToAsc=0
+FDataFileFolder=.\Logging\Bus\
+FDataFileNameRule=[Configuration Name][System Time]
+IsLoggingEnabled=1
+
+[MeasSetup]
+UICommon=0,-1,0,0,suLBv8no1sM_,100,197,859624789364266398,0
+UIFilter=
+Zoom=1
+
+[SystemMsgOptions]
+MaxLines=100000
+UICommon=0,-1,0,0,z7XNs8/7z6I_,100,435,6249589147065849423,0
+UIFilter=
+
+[AutomationScriptEditor]
+SearchFromCaret=0
+SearchBackwards=1
+SearchCaseSensitive=1
+SearchSelectionOnly=0
+SearchTextAtCaret=1
+SearchWholeWords=1
+SearchRegex=0
+RememberSearchList=0
+SearchDirectory=0
+SearchInSub=0
+SearchListMax=6
+
+[TfrmSystemVarMgmt]
+TreeView=0
+AutoDecideTree=1
+
+[RTL_Form_Position]
+TfrmTSMaster_0=0,0,1938,1038
+TfrmMPLibrary=371,231,1548,789
+TfrmUserEvents=332,164,1588,856
+TfrmHardware=458,135,1461,885
+TfrmChannelMapping=459,228,1461,791
+TfrmCANDatabase1=326,190,1594,977
+CCodeEditor=19,217,1309,1040
+CANFDTraceOptions=242,349,1624,845
+TfrmProjectSettings=461,124,1458,895
+TfrmAppManager=355,150,1564,870
+TfrmSystemVarMgmt=459,118,1460,1050
+
+[MDIInstances]
+TfrmBasePluginSingle.TfrmLicenseClient=0
+TfrmSystemMsgs=1
+TfrmGraphics=1
+TfrmCANStatistics=0
+TfrmCANDatabase=1
+TfrmHardware=0
+TfrmLogging=1
+TfrmPlayback=0
+TfrmCANFDTrace=1
+TfrmCANFDTransmit=0
+TfrmLINTrace=0
+TfrmLINTransmit=0
+TfrmLINDatabase=0
+TfrmChannelMapping=0
+TfrmCCodeEditor=1
+TfrmSettings=0
+TfrmCANRBS=0
+TfrmMPLibrary=0
+TfrmSystemVarMgmt=0
+TfrmMeasurementSetup=1
+TfrmMeasurementDataFilter=0
+TfrmLINRBS=0
+TfrmTSAppHost=0
+TfrmAutomotiveFileConverter=0
+TfrmSignalMapping=0
+TfrmSymbolValue=0
+TfrmSTIM=0
+TfrmFormDocker=0
+TfrmNumeric=1
+TfrmAppManager=0
+TfrmProjectSettings=0
+TfrmSignalTester=1
+TfrmTsRPC=0
+TfrmTSWebServer=0
+TfrmDeployTSMaster=0
+TfrmInitValues=0
+TfrmMpLibBuilder=0
+TfrmAutoSARE2EViewer=0
+TfrmUserEvents=0
+TfrmMBDManager=0
+TfrmBD=0
+TfrmDataRepository=1
+TfrmFlexRayDatabase=0
+TfrmFlexRayTrace=0
+TfrmFlexRayTransmit=0
+TfrmFlexRayRBS=0
+TfrmFlexRayClusterMonitor=0
+TfrmEthernetDatabase=0
+TfrmASN1Database=0
+TfrmEthernetTrace=0
+TfrmEthernetTransmit=0
+TfrmEthernetPackageBuilder=0
+TfrmTCPIPStack=0
+TfrmEthernetRBS=0
+TfrmMeter=0
+TfrmVideoReplay=0
+TfrmToolboxBuilder=0
+TfrmTSForm=0
+TfrmPythonCodeEditor=0
+TfrmSerialPort=0
+TfrmDiagnostics=0
+TfrmDiagnosticsDB=0
+TfrmDiagnosticsDTCAnalysis=0
+TfrmDiagnosticsActionPanel=0
+TfrmDiagnosticsDOIP=0
+
+[Pg0]
+Count=1
+f0=TfrmCCodeEditor,0,24,131,1868,726,19,217,1290,823,1
+HiddenCount=10
+h0=TfrmCANDatabase,0,509,0,1268,761,0,0,1268,787,1
+h1=TfrmCANFDTrace,0,0,84,1868,726,242,349,1382,496,1
+h2=TfrmGraphics,0,510,75,1358,735,0,0,1358,756,1
+f1=TfrmCANFDTrace,0,0,84,1868,726,242,349,1382,496,1
+h3=TfrmDataRepository,0,0,0,1489,761,0,0,1489,825,1
+f2=TfrmCANFDTrace,0,0,84,1868,726,242,349,1382,496,1
+h4=TfrmCCodeEditor,0,73,21,1298,716,19,217,1290,823,1
+h5=TfrmSignalTester,0,0,0,1428,706,0,0,1428,706,1
+h6=TfrmLogging,0,289,85,991,582,0,0,991,582,1
+h7=TfrmMeasurementSetup,0,192,108,1043,653,192,192,1043,653,1
+h8=TfrmSystemMsgs,0,168,141,1616,408,0,0,1616,408,1
+h9=TfrmNumeric,0,454,108,1142,497,0,0,1142,497,1
+h10=TfrmNumeric,0,454,108,1142,497,0,0,1142,497,1
+f3=TfrmCCodeEditor,0,0,0,1868,726,19,217,1290,823,1
+f4=TfrmMeasurementSetup,0,192,108,1043,653,192,192,1043,653,1
+f5=TfrmGraphics,0,510,75,1358,735,0,0,1358,756,1
+
+[RTL_Form_Position_MDI]
+CCodeEditor=24,131,1892,857
+TfrmCANDatabase=0,0,1268,787
+CANFDTraceOptions=0,84,1868,810
+CANFDTransmit=324,239,1645,945
+CANFDTraceOptions1=0,0,1382,496
+Graphics=0,0,1358,756
+TfrmCANRBS=270,129,1682,835
+TfrmDataRepository=0,0,1489,825
+TfrmSignalTester=64,64,1492,770
+TfrmLogging=0,0,991,582
+PythonCodeEditor=358,4,1666,766
+TfrmMeasurementSetup=224,224,1267,877
+TfrmSystemMsgs=168,141,1784,549
+TfrmNumeric=0,0,1142,497
+
+[PageLayouts]
+DisableResize=0
+Tabbed=0
+PageCnt=1
+ActiveIdx=0
+Pg0=New1
+ScreenWidth=1920
+ScreenHeight=1080
+MainBounds=-9,-9,1929,1029
+PixelsPerInch=120
+AppLeftP=-9
+AppTopP=-9
+
